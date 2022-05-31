@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/moviestyles.css') }}">
+</head>
+<body>
+
+<div class="login-div">
+    <div>
+        <button id="login-page-button">Admin Login</button>
+        <div id="login-details" class="hidden">
+            <input type="text" id="get-user-name" placeholder="Enter the User Name">
+            <input type="text" id="get-password" placeholder="Enter the Password">
+            <button id="login-button">Login</button>
+        </div>
+        <button id="logout-button" class="hidden">Logout</button>
+    </div>
+</div>
+
+<h1 class="heading">Welcome to The Movie World!</h1>
+
+<div id="admin-section" class="admin-section hidden">
+    <div class="sub-heading">Admin Section</div>
+    <div class="admin-section-div">
+        <div id="admin-select-table" class="admin-select-table align-center">
+            <select name="get-insert-table" operation="insert" id="insert-table" class="admin-options">
+                <option value="default" disabled selected value> Select the Insert Table </option>
+            </select>
+
+            <select name="get-update-table" operation="update" id="update-table" class="admin-options">
+                <option value="default" disabled selected value> Select the Update Table </option>
+            </select>
+
+            <select name="get-delete-table" operation="delete" id="delete-table" class="admin-options">
+                <option value="default" disabled selected value> Select the Delete Table </option>
+            </select>
+        </div>
+        <div id="admin-table" class="admin-table align-center hidden">
+
+        </div>
+    </div>
+</div>
+
+<div class="row-1">
+    <div class="queries movie-popular">
+        <button class="button-53" role="button" id="movie-top-popular">Get Top 10 Popular Movies</button>
+    </div>
+
+    <div class="queries movie-top">
+        <button class="button-53" role="button" id="movie-top-rated">Get Top 10 Rated Movies</button>
+    </div>
+</div>
+
+<div class="row-2">
+    <div class="queries">
+        <select name="get-genre" id="get-genre">
+            <option disabled selected value>Select the Movie Genre </option>
+        </select>
+        <button class="button-53" role="button" id="all-movies-by-genre">Get Movies by Genre</button>
+    </div>
+
+    <div class="queries">
+        <input type="text" id="get-keyword" placeholder="Enter the Search Keyword">
+        <button class="button-53" role="button" id="all-movies-by-keyword">Get Movies by Keywords</button>
+    </div>
+
+    <div class="queries">
+        <input type="text" id="get-production" placeholder="Enter the Production">
+        <button class="button-53" role="button" id="all-movies-by-production">Get Movies by Production</button>
+    </div>
+</div>
+
+<div class="row-3">
+    <div class="queries">
+        <input type="text" id="get-title" placeholder="Enter the Movie Title">
+        <button class="button-53" role="button" id="movie-by-title">Search Movie by Title</button>
+    </div>
+
+    <div class="queries">
+        <input type="text" id="get-id" placeholder="Enter the Movie ID">
+        <button class="button-53" role="button" id="movie-by-id">Search Movie by ID</button>
+    </div>
+</div>
+
+<div class="row-3">
+    <div class="queries">
+        <button class="button-53" role="button" id="all-movies">Get All Movies</button>
+    </div>
+</div>
+
+<div id="render-movie-details"></div>
+
+<div class="next-button-class hidden" id="next-button-div">
+    <button id = "prev-button">Load Prev</button>
+    <button id = "next-button">Load Next</button>
+</div>
+
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+
+</html>
